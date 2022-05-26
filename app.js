@@ -40,7 +40,7 @@ app.post("/compose", (req, res) => {
         title: req.body.postTitle,
         content: req.body.postBody
     };
-
+    
     posts.push(post);
     res.redirect("/");
 });
@@ -61,7 +61,7 @@ app.get("/posts/:post", (req, res) => {
 
 app.get("*", (req, res) => {
     res.render("post", {postTitle: "404 | Page not found", postBody: "The requested page is not found on our server."})
-})
+});
 
 app.listen(5500, function () {
     console.log("Server started on port 5500");
